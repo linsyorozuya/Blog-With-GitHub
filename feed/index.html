@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>「Coder」灰桑</title><link>/</link><description>图难于其易，于大为其细</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/logo.png</url><title>「Coder」灰桑</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Sat, 08 May 2021 10:11:10 +0806</lastBuildDate><pubDate>Sat, 08 May 2021 10:11:10 +0806</pubDate><item><title>iOS 自定义控件适应内容大小问题</title><link>/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link><description>&lt;blockquote&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>「Coder」灰桑</title><link>/</link><description>图难于其易，于大为其细</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/logo.png</url><title>「Coder」灰桑</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Sat, 08 May 2021 10:47:37 +0806</lastBuildDate><pubDate>Sat, 08 May 2021 10:47:37 +0806</pubDate><item><title>iOS 自定义控件适应内容大小问题</title><link>/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</link><description>&lt;blockquote&gt;
 &lt;p&gt;Why: 之前学习封装了下类似标签页的控件但是并不能根据内容大小来变化高度，看了别人的代码学习下自定义控件如何自适应内容大小。做个笔记。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;相关链接：&lt;/em&gt;&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/zekunyan/TTGTagCollectionView"&gt;Github 上功能较全的项目： TTGTagCollectionView&lt;/a&gt;&lt;/li&gt;
@@ -316,45 +316,54 @@ rm -r directory_name
 &lt;p&gt;对于通过 Action 改变的状态，如果我们想要执行网络请求这样的副作用，可以通过同时返回合适的 Command 完成。但是对于通过绑定来更新的状态，由于不会经过 Store 的 reducer 来处理状态并返回 Command，我们缺少一种有效的手段来在它们改变时执行副作用。&lt;/p&gt;&lt;p&gt;在 SwiftUI 中可以使用 combine 来解决这个问题。最简单的方法是在属性前加上 @Published 来为相关属性创建 Publisher 。然后在合适的位置订阅相关事件来执行额外的操作。&lt;/p&gt;&lt;h2&gt;总结&lt;/h2&gt;
 &lt;p&gt;通过这个架构体验到了 SwiftUI 开发数据驱动页面更新的便利和优势，而且 SwiftUI 还能用来开发 Mac 端的应用。虽然目前 SwiftUI 还在开始不成熟的阶段，但是有理由相信以后 SwiftUI 统一苹果全平台的时候。期待下个月的 WWDC 的 SwiftUI。&lt;/p&gt;</description><author>linsyorozuya@yahoo.com (灰桑)</author><guid isPermaLink="true">/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/</guid><pubDate>Sat, 23 May 2020 00:00:00 +0806</pubDate></item><item><title>SwiftUI 如何监听 @State 变更</title><link>/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/</link><description>&lt;h3&gt;SwiftUI 如何监听 @State 变更&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;/// 1
-@State var searchText = PassthroughSubject&amp;lt;String, Never&amp;gt;()
-.onReceive(searchText.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { search in
-    getSearchMembers(search: search)
-})
+&lt;pre&gt;&lt;code&gt;import Combine
 
-///2
-struct ContentView: View {
-    @State var location: String = &amp;quot;&amp;quot;
-
+struct ObserveStateChange: View {
     var body: some View {
-        let binding = Binding&amp;lt;String&amp;gt;(get: {
-            self.location
-        }, set: {
-            self.location = $0
-            // do whatever you want here
-        })
+        VStack(spacing: 32) {
+            Solution1().padding().background(Color.red)
+            Solution2().padding().background(Color.yellow)
+            Solution3().padding().background(Color.green)
+        }
+    }
 
-        return VStack {
-            Text(&amp;quot;Current location: \(location)&amp;quot;)
+    /// 1
+    struct Solution1: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            let binding = Binding&amp;lt;String&amp;gt;(get: {
+                self.location
+            }, set: {
+                self.location = $0
+                // do whatever you want here
+                print(&amp;quot;Solution1 \($0)&amp;quot;)
+            })
+
             TextField(&amp;quot;Search Location&amp;quot;, text: binding)
         }
+    }
 
+    /// 2
+    struct Solution2: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            TextField(&amp;quot;Search Location&amp;quot;, text: $location)
+                .onReceive(Just(location)) { print(&amp;quot;Solution2 \($0)&amp;quot;) }
+        }
+    }
+
+    /// 3
+    struct Solution3: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            TextField(&amp;quot;Search Location&amp;quot;, text: $location.onChange { print(&amp;quot;Solution3 \($0)&amp;quot;) })
+        }
     }
 }
 
-///3 
-struct ContentView: View {
-    @State var location: String = &amp;quot;&amp;quot;
-
-    var body: some View {
-        TextField(&amp;quot;Search Location&amp;quot;, text: $location)
-            .onReceive(Just(location)) { location in
-                // print(location)
-            }
-    }
-}
-
-///4
 extension Binding {
     func onChange(_ handler: @escaping (Value) -&amp;gt; Void) -&amp;gt; Binding&amp;lt;Value&amp;gt; {
         Binding(
@@ -367,7 +376,5 @@ extension Binding {
     }
 }
 
-Toggle(isOn: $isServerManage.onChange { newValue in
-                                                             }, label: {})
 &lt;/code&gt;&lt;/pre&gt;
 </description><author>linsyorozuya@yahoo.com (灰桑)</author><guid isPermaLink="true">/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/</guid><pubDate>Sat, 08 May 2021 00:00:00 +0806</pubDate></item></channel></rss>

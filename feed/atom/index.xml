@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>「Coder」灰桑</title><updated>2021-05-08T10:11:10.107157+08:06</updated><author><name>linsyorozuya</name><email>linsyorozuya@yahoo.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/logo.png</logo><subtitle>图难于其易，于大为其细</subtitle><entry><id>/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</id><title>iOS 自定义控件适应内容大小问题</title><updated>2021-05-08T10:11:10.107814+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>「Coder」灰桑</title><updated>2021-05-08T10:47:37.111841+08:06</updated><author><name>linsyorozuya</name><email>linsyorozuya@yahoo.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/logo.png</logo><subtitle>图难于其易，于大为其细</subtitle><entry><id>/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/</id><title>iOS 自定义控件适应内容大小问题</title><updated>2021-05-08T10:47:37.112449+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;Why: 之前学习封装了下类似标签页的控件但是并不能根据内容大小来变化高度，看了别人的代码学习下自定义控件如何自适应内容大小。做个笔记。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;相关链接：&lt;/em&gt;&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/zekunyan/TTGTagCollectionView"&gt;Github 上功能较全的项目： TTGTagCollectionView&lt;/a&gt;&lt;/li&gt;
@@ -48,7 +48,7 @@
 #### **值得一提**
 在 storybored 或者 xib 中设置视图约束的时候，如果要设定高度变化的话，记得勾选相应的约束 remove at build time 这个选项来保证高度是可以变化的：
 &lt;figure style="flex: 59.72222222222222" &gt;&lt;img width="516" height="432" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/137b515a04215f1560b19264387a71d7.png" /&gt;&lt;figcaption&gt;Untitled Image&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;或者在下图这个 Instrinsic Size 的属性里设置为 Placeholder，暂时给予视图一个占位的内容大小， 来避免 Xcode报错：&lt;/p&gt;&lt;figure style="flex: 43.88111888111888" &gt;&lt;img width="502" height="572" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/f00981195aaeb506950f09cd2232d7e1.png" /&gt;&lt;figcaption&gt;Untitled Image&lt;/figcaption&gt;&lt;/figure&gt;&lt;h1&gt;what&lt;/h1&gt;
-&lt;p&gt;然后，修改了自己学习封装的类似标签页的控件的代码。让其具有自适应内容的大小：&lt;/p&gt;&lt;figure style="flex: 27.468581687612208" &gt;&lt;img width="306" height="557" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/8d9e24c78e88a38b8a7c192403256191.gif" /&gt;&lt;figcaption&gt;Untitled Image&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;a href="https://github.com/linsyorozuya/LHTagsViewDemo"&gt;Demo 项目地址&lt;/a&gt;&lt;/p&gt;</content><link href="/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/" rel="alternate"/><published>2016-11-08T00:00:00+08:06</published></entry><entry><id>/archives/iOS%20Widget%20-%20%E4%BE%BF%E5%AE%9C%E5%90%97%20%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</id><title>iOS Widget - 便宜吗 开发问题记录</title><updated>2021-05-08T10:11:10.107749+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;figure style="flex: 115.94202898550725" &gt;&lt;img width="480" height="207" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/842e151742401545fcebcb4a9cf219ce.png" /&gt;&lt;/figure&gt;&lt;h2&gt;WHY&lt;/h2&gt;
+&lt;p&gt;然后，修改了自己学习封装的类似标签页的控件的代码。让其具有自适应内容的大小：&lt;/p&gt;&lt;figure style="flex: 27.468581687612208" &gt;&lt;img width="306" height="557" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/8d9e24c78e88a38b8a7c192403256191.gif" /&gt;&lt;figcaption&gt;Untitled Image&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;a href="https://github.com/linsyorozuya/LHTagsViewDemo"&gt;Demo 项目地址&lt;/a&gt;&lt;/p&gt;</content><link href="/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/" rel="alternate"/><published>2016-11-08T00:00:00+08:06</published></entry><entry><id>/archives/iOS%20Widget%20-%20%E4%BE%BF%E5%AE%9C%E5%90%97%20%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</id><title>iOS Widget - 便宜吗 开发问题记录</title><updated>2021-05-08T10:47:37.112398+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;figure style="flex: 115.94202898550725" &gt;&lt;img width="480" height="207" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/842e151742401545fcebcb4a9cf219ce.png" /&gt;&lt;/figure&gt;&lt;h2&gt;WHY&lt;/h2&gt;
 &lt;p&gt;很久很久以前…&lt;/p&gt;&lt;p&gt;淘宝是有价格变化曲线的，利用曲线可以很大程度上防止商家的虚假促销。但是不知到出于什么原因后来取消了这个功能。&lt;/p&gt;&lt;p&gt;庆幸的是浏览器上目前还有几款插件来显示历史价格，不幸的是手机上并没有。&lt;/p&gt;&lt;p&gt;只发现一款叫 &lt;code&gt;比一比价&lt;/code&gt; 的 app 提供了这个功能（没有开发 widget），而且能查询大部分电商商品的价格曲线。&lt;/p&gt;&lt;p&gt;虽然可以查询，但是这个 app 的搜索过程繁琐，要是想查询一个商品的价格，你需要四个步骤：&lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;复制商品的衔接&lt;/li&gt;
 &lt;li&gt;打开 app&lt;/li&gt;
@@ -112,7 +112,7 @@
 &lt;li&gt;&lt;p&gt;&lt;a href="http://www.jianshu.com/p/ca3e11d7686c"&gt;iOS 开发之 widget 实现&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/Today.html#//apple_ref/doc/uid/TP40014214-CH11-SW1"&gt;App Extension Programming Guide: Today&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content><link href="/archives/iOS%20Widget%20-%20%E4%BE%BF%E5%AE%9C%E5%90%97%20%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="alternate"/><published>2017-01-09T00:00:00+08:06</published></entry><entry><id>/archives/%E8%AE%B0%E5%BD%95%E3%80%8C%E6%AD%8C%E8%AF%8D%E6%B4%BE%E3%80%8D/</id><title>记录「歌词派」</title><updated>2021-05-08T10:11:10.107686+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+</content><link href="/archives/iOS%20Widget%20-%20%E4%BE%BF%E5%AE%9C%E5%90%97%20%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="alternate"/><published>2017-01-09T00:00:00+08:06</published></entry><entry><id>/archives/%E8%AE%B0%E5%BD%95%E3%80%8C%E6%AD%8C%E8%AF%8D%E6%B4%BE%E3%80%8D/</id><title>记录「歌词派」</title><updated>2021-05-08T10:47:37.112348+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;终于个人的第二款 App 完成了，但是它却无法上架 App Store。从自己的需求出发而产生的产品，它最终只能服务于自己了。至少它还有我，所有至少写个文章记录下它。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3&gt;UI 截图&lt;/h3&gt;
 &lt;p&gt;这几张本来是「歌词派」的 App Store 上的截图。现在上不了 App Store 只能放这里看看咯。（这些应用截图是使用 &lt;a href="https://storescreens.com/?ref=producthunt"&gt;Store Screens&lt;/a&gt; 应用做的，简单易用十分推荐。）&lt;/p&gt;&lt;figure style="flex: 66.66666666666667" &gt;&lt;img width="4800" height="3600" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/5a3e7526e58c4f6ab5d48adbd063d2ae.jpeg" /&gt;&lt;/figure&gt;&lt;figure style="flex: 66.66" &gt;&lt;img width="6666" height="5000" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/d018c017e636464a62f5535b87c2441f.JPG" /&gt;&lt;/figure&gt;&lt;h3&gt;视频&lt;/h3&gt;
@@ -121,7 +121,7 @@
 &lt;p&gt;因为我喜欢听歌和偶尔唱歌，但是我不爱记歌词。而且一般只记得住那些高潮部分的歌词。所以就想做一个搜索、收藏和分享歌词的一个应用。搜了 App Store 没找到符合这个功能的应用，所以就开始自己动手看看能不能做一个。都想好付费模式了。。（后来想想大家怎么都没做应该是审核过不了的关系吧 @。@）&lt;/p&gt;&lt;h3&gt;创造过程&lt;/h3&gt;
 &lt;p&gt;做自己的个人应用真的让我越来越体会到一个作为创造者的乐趣。「歌词派」总共的开发时间大概做了不到一个月吧。&lt;/p&gt;&lt;p&gt;歌曲数据方面调研了挺久，一些歌词服务基本都是需要付费的。大部分大家都是抓的国内各大音乐产品的数据。因为我主要使用到歌词，所以对比了几家应用，还是 QQ 音乐的歌曲比较全。虽然有些歌不能听，但是你可以搜出来这些歌。&lt;/p&gt;&lt;p&gt;技术上没有什么很复杂的难点，主要是第一次运用了 Cloudkit 来存取数据。基本了解了 Cloudkit 的开发，因为这个东西基本也只有个人开发者回去使用它。所以基本看文档和一些文章就够了。&lt;/p&gt;&lt;p&gt;大部分时间基本是花在设计页面和一些小动画的调整上了。个人觉得用的挺舒服的，可惜也只能我自己用了。&lt;/p&gt;&lt;h3&gt;为何不能上架&lt;/h3&gt;
 &lt;p&gt;本来以为没有播放音乐，只是展示歌词的话版权方面应该没问题吧。结果歌词也是有版权的，审核马上就被拒绝了。&lt;/p&gt;&lt;h3&gt;我还是很喜欢它&lt;/h3&gt;
-&lt;p&gt;虽然不能上架，但是我自己还可以用呗。后面看看要不要删减点功能开源吧。最后分享一张从「歌词派」生成的分享的歌词吧&lt;/p&gt;&lt;figure style="flex: 56.053811659192824" &gt;&lt;img width="750" height="669" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/IMG_2536.JPG" /&gt;&lt;figcaption&gt;憨人&lt;/figcaption&gt;&lt;/figure&gt;</content><link href="/archives/%E8%AE%B0%E5%BD%95%E3%80%8C%E6%AD%8C%E8%AF%8D%E6%B4%BE%E3%80%8D/" rel="alternate"/><published>2019-08-12T00:00:00+08:06</published></entry><entry><id>/archives/%E7%A6%81%E6%AD%A2%20Chrome%20%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%20%28Mac%29/</id><title>禁止 Chrome 自动更新 (Mac)</title><updated>2021-05-08T10:11:10.107623+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+&lt;p&gt;虽然不能上架，但是我自己还可以用呗。后面看看要不要删减点功能开源吧。最后分享一张从「歌词派」生成的分享的歌词吧&lt;/p&gt;&lt;figure style="flex: 56.053811659192824" &gt;&lt;img width="750" height="669" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/IMG_2536.JPG" /&gt;&lt;figcaption&gt;憨人&lt;/figcaption&gt;&lt;/figure&gt;</content><link href="/archives/%E8%AE%B0%E5%BD%95%E3%80%8C%E6%AD%8C%E8%AF%8D%E6%B4%BE%E3%80%8D/" rel="alternate"/><published>2019-08-12T00:00:00+08:06</published></entry><entry><id>/archives/%E7%A6%81%E6%AD%A2%20Chrome%20%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%20%28Mac%29/</id><title>禁止 Chrome 自动更新 (Mac)</title><updated>2021-05-08T10:47:37.112297+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;自从把电脑的默认浏览器设置为 Chrome，Clean My Mac 就时不时弹出窗口提示更新程序没响应。再次记录方法。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3&gt;&lt;a href="https://support.google.com/chrome/a/answer/7591084?hl=zh-Hans"&gt;谷歌官方方法&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;这里拷贝一份&lt;/p&gt;
@@ -147,12 +147,12 @@ com.google.Keystone.plist 文件地址在 /Library/LaunchAgents
 保存更改。
 此表显示了 UpdateDefault 键的所有有效设置。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;发现没效果了，发现直接 CleanMyMac 里面禁用扩展好像生效了。。。。。。&lt;/p&gt;</content><link href="/archives/%E7%A6%81%E6%AD%A2%20Chrome%20%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%20%28Mac%29/" rel="alternate"/><published>2019-09-21T00:00:00+08:06</published></entry><entry><id>/archives/%E8%AE%A9%20Xcode%20%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E5%A5%BD%E7%9C%8B/</id><title>让 Xcode 的代码更好看</title><updated>2021-05-08T10:11:10.107546+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+&lt;p&gt;发现没效果了，发现直接 CleanMyMac 里面禁用扩展好像生效了。。。。。。&lt;/p&gt;</content><link href="/archives/%E7%A6%81%E6%AD%A2%20Chrome%20%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%20%28Mac%29/" rel="alternate"/><published>2019-09-21T00:00:00+08:06</published></entry><entry><id>/archives/%E8%AE%A9%20Xcode%20%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E5%A5%BD%E7%9C%8B/</id><title>让 Xcode 的代码更好看</title><updated>2021-05-08T10:47:37.112247+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;最近看了一篇 Xcode 编辑器字体颜色优化的文章 &lt;a href="https://medium.com/flawless-app-stories/one-stop-xcode-coziness-ee8dc9c1eb8b"&gt;One-Stop Xcode Coziness&lt;/a&gt;&lt;br /&gt;
 ，感觉效果不错。在此记录记录。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;这几年随着不断更新 Xcode 变得更加强大和易用，当然也被越来越多的开发者吐槽它的又胖又慢。但即便大家都在吐槽，但 Xcode 仍然是大部分 iOS 开发者的首选 IDE。&lt;/p&gt;&lt;p&gt;作为一个天天低头不见抬头见的代码编辑器，代码的颜色和字体看起来舒不舒服和简洁明了是非常重要的。 Xcode 的主题就是解决这方面需求的功能。你可以自定义类名、函数名、常量等等类型的代码颜色，这样你可以轻松的区分代码的类型以便更好的调试。&lt;/p&gt;&lt;p&gt;但是 Xcode 自带的主题一部分没有对相应类型的颜色加以区分，比如我喜欢的主题是 Sunset 这种淡黄色的主题就没有很好的区分一些类型的颜色。之前重装 Xcode 后，我都是直接选择 Sunset 主题，然后字体改为 15 号大小。如下图：&lt;/p&gt;&lt;figure style="flex: 71.10912343470483" &gt;&lt;img width="1590" height="1118" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/ca7c3baa126a6c2bad029815d839b519.png" /&gt;&lt;/figure&gt;&lt;h3&gt;优化方案&lt;/h3&gt;
 &lt;p&gt;所谓的优化其实就是替换你觉得更好的字体和优化相关的代码类型颜色。当然除了这个还有上文说的我看的文章里提到的通过编程连字体优化 &lt;strong&gt;逻辑运算符&lt;/strong&gt;。这个我还是第一次知道，孤陋寡闻了。下图字体为 Fira Code 效果如下：&lt;/p&gt;&lt;figure style="flex: 45.32374100719424" &gt;&lt;img width="1764" height="1946" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/912e227bf9128aa1c741dd13b60e2dff.png" /&gt;&lt;/figure&gt;&lt;p&gt;可以看到想 &amp;gt;= 这种符号就变得很像我们手写的这种符号了。我觉的看起来非常直观，当然每个人感觉不一样。&lt;/p&gt;&lt;p&gt;当然也有有很多编程连字字体，从 &lt;a href="https://github.com/tonsky/FiraCode"&gt;Fira Code&lt;/a&gt;， &lt;a href="https://github.com/i-tu/Hasklig"&gt;Hasklig&lt;/a&gt; 等免费字体到 &lt;a href="http://www.fsd.it/fonts/pragmatapro.htm"&gt;PragmataPro&lt;/a&gt; 等付费字体。你可以在 &lt;a href="https://github.com/ProgrammingFonts/ProgrammingFonts"&gt;ProgrammingFonts 上&lt;/a&gt; 浏览这些字体，也可以调整所需的字体，我觉得 Fira Code 挺好看的就使用 Fira Code 了。&lt;/p&gt;&lt;p&gt;然后文章作者实现了一个代码颜色和连字字体的 Xcode 主题，&lt;strong&gt;Yolo-theme。&lt;/strong&gt; 你可以在他的 GitHub 上查看 &lt;a href="https://github.com/wendyliga/yolo-theme?source=post_page-----ee8dc9c1eb8b----------------------"&gt;Yolo-theme&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;放置主题文件地址&lt;/h3&gt;
-&lt;p&gt;下载主题后将文件放入 &lt;code&gt;~/Library/Developer/Xcode/UserData/FontAndColorThemes&lt;/code&gt;, 然后重启 Xcode 在设置里选择主题即可。&lt;/p&gt;&lt;figure style="flex: 79.29883138564274" &gt;&lt;img width="1900" height="1198" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/2b9e8f99475e45326fa0cbbcce57ac8d.png" /&gt;&lt;/figure&gt;</content><link href="/archives/%E8%AE%A9%20Xcode%20%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E5%A5%BD%E7%9C%8B/" rel="alternate"/><published>2019-10-02T00:00:00+08:06</published></entry><entry><id>/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/</id><title>Git 命令备忘</title><updated>2021-05-08T10:11:10.107489+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+&lt;p&gt;下载主题后将文件放入 &lt;code&gt;~/Library/Developer/Xcode/UserData/FontAndColorThemes&lt;/code&gt;, 然后重启 Xcode 在设置里选择主题即可。&lt;/p&gt;&lt;figure style="flex: 79.29883138564274" &gt;&lt;img width="1900" height="1198" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/2b9e8f99475e45326fa0cbbcce57ac8d.png" /&gt;&lt;/figure&gt;</content><link href="/archives/%E8%AE%A9%20Xcode%20%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E5%A5%BD%E7%9C%8B/" rel="alternate"/><published>2019-10-02T00:00:00+08:06</published></entry><entry><id>/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/</id><title>Git 命令备忘</title><updated>2021-05-08T10:47:37.112194+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;笔记用于回顾。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3&gt;查看当前文件状态&lt;/h3&gt;
 &lt;p&gt;要查看哪些文件处于什么状态，可以用 &lt;code&gt;git status&lt;/code&gt; 命令。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 命令的输出十分详细，但其用语有些繁琐。 如果你使用 git status -s 命令或 git status --short 命令，你将得到一种更为紧凑的格式输出。&lt;/p&gt;&lt;h3&gt;查看提交历史&lt;/h3&gt;
@@ -162,7 +162,7 @@ com.google.Keystone.plist 文件地址在 /Library/LaunchAgents
 &lt;p&gt;&lt;code&gt;git merge&lt;/code&gt; 在这个命令下，Git 会找到两个分支的共同祖先，将这三者进行一个三方合并。这种三方合并会产生一个新的提交，当前会指向这个新的提交。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git rebase&lt;/code&gt; 则不采用三方合并，它会比较要「合并的分支」和「两个分支的共同祖先」这两个提交，将其中的修改提取成一个补丁。然后在「当前分支」的提交上应用这个补丁，从而生成一个新的「提交」。这种方式被叫做「rebase」，中文叫「变基」。&lt;/p&gt;&lt;h3&gt;解决 Merge 冲突&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;git merge --abort&lt;/code&gt; 可以恢复到 merge 之前的状态。&lt;/p&gt;&lt;h3&gt;查看到所有关联到当前仓库的远程仓库&lt;/h3&gt;
 &lt;p&gt;通过 &lt;code&gt;git remote&lt;/code&gt; 命令，我们可以查看到所有关联到当前仓库的远程仓库。&lt;/p&gt;&lt;p&gt;通过 &lt;code&gt;git remote show&lt;/code&gt; 命令，我们可以查看某一个远程仓库的详细信息。&lt;/p&gt;&lt;h3&gt;git stash&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;git stash&lt;/code&gt; 这个命令可以将你当前进行到一半的工作保存到一个暂存区域，然后将当前目录回滚到上一次提交。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash apply&lt;/code&gt;把之前放到储藏区的最新的那个修改切回来。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash list&lt;/code&gt;可以把所有放到储藏区的修改都列出来。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash --list&lt;/code&gt; 查看&lt;code&gt;git stash&lt;/code&gt;命令列表。&lt;/p&gt;</content><link href="/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" rel="alternate"/><published>2020-01-26T00:00:00+08:06</published></entry><entry><id>/archives/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%87%E5%BF%98/</id><title>命令行备忘</title><updated>2021-05-08T10:11:10.107411+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;git stash&lt;/code&gt; 这个命令可以将你当前进行到一半的工作保存到一个暂存区域，然后将当前目录回滚到上一次提交。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash apply&lt;/code&gt;把之前放到储藏区的最新的那个修改切回来。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash list&lt;/code&gt;可以把所有放到储藏区的修改都列出来。&lt;/p&gt;&lt;p&gt;&lt;code&gt;git stash --list&lt;/code&gt; 查看&lt;code&gt;git stash&lt;/code&gt;命令列表。&lt;/p&gt;</content><link href="/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" rel="alternate"/><published>2020-01-26T00:00:00+08:06</published></entry><entry><id>/archives/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%87%E5%BF%98/</id><title>命令行备忘</title><updated>2021-05-08T10:47:37.112145+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;用到一个记一个。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3&gt;创建文件&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;创建 helloword.txt 文件
@@ -206,7 +206,7 @@ rm -r directory_name
 &lt;span class="nb"&gt;cd&lt;/span&gt; !$ 执行此命令会自动生成命令 
 &lt;span class="nb"&gt;cd&lt;/span&gt; ~/Desktop/html
 &lt;/pre&gt;&lt;/div&gt;
-</content><link href="/archives/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%87%E5%BF%98/" rel="alternate"/><published>2020-02-01T00:00:00+08:06</published></entry><entry><id>/archives/%E5%9C%A8%20Playground%20%E4%B8%AD%E7%BC%96%E8%AF%91%20SwiftUI/</id><title>在 Playground 中编译 SwiftUI</title><updated>2021-05-08T10:11:10.107366+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+</content><link href="/archives/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%87%E5%BF%98/" rel="alternate"/><published>2020-02-01T00:00:00+08:06</published></entry><entry><id>/archives/%E5%9C%A8%20Playground%20%E4%B8%AD%E7%BC%96%E8%AF%91%20SwiftUI/</id><title>在 Playground 中编译 SwiftUI</title><updated>2021-05-08T10:47:37.112086+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;记录下在 Playground 中编译 SwiftUI 的代码。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="nc"&gt;SwiftUI&lt;/span&gt;
 &lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="nc"&gt;PlaygroundSupport&lt;/span&gt;
@@ -232,7 +232,7 @@ rm -r directory_name
 
 &lt;span class="n"&gt;PlaygroundPage&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setLiveView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ContentView&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/截屏2020-05-14%20上午11.43.34.png" /&gt;&lt;figcaption&gt;截屏2020-05-14 上午11.43.34&lt;/figcaption&gt;&lt;/figure&gt;</content><link href="/archives/%E5%9C%A8%20Playground%20%E4%B8%AD%E7%BC%96%E8%AF%91%20SwiftUI/" rel="alternate"/><published>2020-05-14T00:00:00+08:06</published></entry><entry><id>/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/</id><title>SwiftUI - 开发图片模糊的 MAC 小应用</title><updated>2021-05-08T10:11:10.107314+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
+&lt;figure  size-undefined&gt;&lt;img width="-1" height="-1" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/截屏2020-05-14%20上午11.43.34.png" /&gt;&lt;figcaption&gt;截屏2020-05-14 上午11.43.34&lt;/figcaption&gt;&lt;/figure&gt;</content><link href="/archives/%E5%9C%A8%20Playground%20%E4%B8%AD%E7%BC%96%E8%AF%91%20SwiftUI/" rel="alternate"/><published>2020-05-14T00:00:00+08:06</published></entry><entry><id>/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/</id><title>SwiftUI - 开发图片模糊的 MAC 小应用</title><updated>2021-05-08T10:47:37.112022+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;blockquote&gt;
 &lt;p&gt;看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2&gt;🌠成果&lt;/h2&gt;
 &lt;figure style="flex: 72.19101123595506" &gt;&lt;img width="2056" height="1424" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/2020-05-25%2000-30-47.2020-05-25%2000_34_42.gif" /&gt;&lt;figcaption&gt;演示.gif&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;应用功能很简单：&lt;/p&gt;&lt;ol&gt;
@@ -314,47 +314,56 @@ rm -r directory_name
 &lt;p&gt;“Reducer 的唯一职责应该是计算新的 State，而发送请求和接收响应，显然和返回新的 State 没什么关系，它们属于设置状态这一操作的“副作用”。在我们的架构中我们使用 Command 来代表“在设置状态的同时需要触发一些其他操作”这个语境。Reducer 在返回新的 State 的同时，还返回一个代表需要进行何种副作用的 Command 值 (对应上一段中的第一个时间点)。Store 在接收到这个 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。这个 Action 中带有异步操作所获取到的数据。它将再次触发 Reducer 并返回新的 State，继而完成异步操作结束时的 UI 更新 。”&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Store 在接收到 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。Action 再次触发 Reducer 并返回新的 State，继而完成 UI 更新 。&lt;/p&gt;&lt;h2&gt;用绑定来更新的状态时通过 Publisher 来订阅并处理事件&lt;/h2&gt;
 &lt;p&gt;对于通过 Action 改变的状态，如果我们想要执行网络请求这样的副作用，可以通过同时返回合适的 Command 完成。但是对于通过绑定来更新的状态，由于不会经过 Store 的 reducer 来处理状态并返回 Command，我们缺少一种有效的手段来在它们改变时执行副作用。&lt;/p&gt;&lt;p&gt;在 SwiftUI 中可以使用 combine 来解决这个问题。最简单的方法是在属性前加上 @Published 来为相关属性创建 Publisher 。然后在合适的位置订阅相关事件来执行额外的操作。&lt;/p&gt;&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;通过这个架构体验到了 SwiftUI 开发数据驱动页面更新的便利和优势，而且 SwiftUI 还能用来开发 Mac 端的应用。虽然目前 SwiftUI 还在开始不成熟的阶段，但是有理由相信以后 SwiftUI 统一苹果全平台的时候。期待下个月的 WWDC 的 SwiftUI。&lt;/p&gt;</content><link href="/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/" rel="alternate"/><published>2020-05-23T00:00:00+08:06</published></entry><entry><id>/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/</id><title>SwiftUI 如何监听 @State 变更</title><updated>2021-05-08T10:11:10.107212+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;h3&gt;SwiftUI 如何监听 @State 变更&lt;/h3&gt;
+&lt;p&gt;通过这个架构体验到了 SwiftUI 开发数据驱动页面更新的便利和优势，而且 SwiftUI 还能用来开发 Mac 端的应用。虽然目前 SwiftUI 还在开始不成熟的阶段，但是有理由相信以后 SwiftUI 统一苹果全平台的时候。期待下个月的 WWDC 的 SwiftUI。&lt;/p&gt;</content><link href="/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/" rel="alternate"/><published>2020-05-23T00:00:00+08:06</published></entry><entry><id>/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/</id><title>SwiftUI 如何监听 @State 变更</title><updated>2021-05-08T10:47:37.111912+00:00</updated><author><name>灰桑</name><email>linsyorozuya@yahoo.com</email><uri>https://code.linsyorozuya.com</uri></author><content>&lt;h3&gt;SwiftUI 如何监听 @State 变更&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;/// 1
-@State var searchText = PassthroughSubject&amp;lt;String, Never&amp;gt;()
-.onReceive(searchText.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { search in
-    getSearchMembers(search: search)
-})
+&lt;pre&gt;&lt;code&gt;import Combine
 
-///2
-struct ContentView: View {
-    @State var location: String = &amp;quot;&amp;quot;
-
+struct ObserveStateChange: View {
     var body: some View {
-        let binding = Binding&amp;lt;String&amp;gt;(get: {
-            self.location
-        }, set: {
-            self.location = $0
-            // do whatever you want here
-        })
+        VStack(spacing: 32) {
+            Solution1().padding().background(Color.red)
+            Solution2().padding().background(Color.yellow)
+            Solution3().padding().background(Color.green)
+        }
+    }
 
-        return VStack {
-            Text(&amp;quot;Current location: \(location)&amp;quot;)
+    /// 1
+    struct Solution1: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            let binding = Binding&amp;lt;String&amp;gt;(get: {
+                self.location
+            }, set: {
+                self.location = $0
+                // do whatever you want here
+                print(&amp;quot;Solution1 \($0)&amp;quot;)
+            })
+
             TextField(&amp;quot;Search Location&amp;quot;, text: binding)
         }
+    }
 
+    /// 2
+    struct Solution2: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            TextField(&amp;quot;Search Location&amp;quot;, text: $location)
+                .onReceive(Just(location)) { print(&amp;quot;Solution2 \($0)&amp;quot;) }
+        }
+    }
+
+    /// 3
+    struct Solution3: View {
+        @State var location: String = &amp;quot;&amp;quot;
+
+        var body: some View {
+            TextField(&amp;quot;Search Location&amp;quot;, text: $location.onChange { print(&amp;quot;Solution3 \($0)&amp;quot;) })
+        }
     }
 }
 
-///3 
-struct ContentView: View {
-    @State var location: String = &amp;quot;&amp;quot;
-
-    var body: some View {
-        TextField(&amp;quot;Search Location&amp;quot;, text: $location)
-            .onReceive(Just(location)) { location in
-                // print(location)
-            }
-    }
-}
-
-///4
 extension Binding {
     func onChange(_ handler: @escaping (Value) -&amp;gt; Void) -&amp;gt; Binding&amp;lt;Value&amp;gt; {
         Binding(
@@ -367,7 +376,5 @@ extension Binding {
     }
 }
 
-Toggle(isOn: $isServerManage.onChange { newValue in
-                                                             }, label: {})
 &lt;/code&gt;&lt;/pre&gt;
 </content><link href="/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/" rel="alternate"/><published>2021-05-08T00:00:00+08:06</published></entry></feed>
