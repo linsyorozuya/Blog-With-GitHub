@@ -16,45 +16,54 @@ excerpt:
 ### SwiftUI 如何监听 @State 变更
 
 ```
-/// 1
-@State var searchText = PassthroughSubject<String, Never>()
-.onReceive(searchText.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { search in
-    getSearchMembers(search: search)
-})
+import Combine
 
-///2
-struct ContentView: View {
-    @State var location: String = ""
-
+struct ObserveStateChange: View {
     var body: some View {
-        let binding = Binding<String>(get: {
-            self.location
-        }, set: {
-            self.location = $0
-            // do whatever you want here
-        })
+        VStack(spacing: 32) {
+            Solution1().padding().background(Color.red)
+            Solution2().padding().background(Color.yellow)
+            Solution3().padding().background(Color.green)
+        }
+    }
 
-        return VStack {
-            Text("Current location: \(location)")
+    /// 1
+    struct Solution1: View {
+        @State var location: String = ""
+
+        var body: some View {
+            let binding = Binding<String>(get: {
+                self.location
+            }, set: {
+                self.location = $0
+                // do whatever you want here
+                print("Solution1 \($0)")
+            })
+
             TextField("Search Location", text: binding)
         }
+    }
 
+    /// 2
+    struct Solution2: View {
+        @State var location: String = ""
+
+        var body: some View {
+            TextField("Search Location", text: $location)
+                .onReceive(Just(location)) { print("Solution2 \($0)") }
+        }
+    }
+
+    /// 3
+    struct Solution3: View {
+        @State var location: String = ""
+
+        var body: some View {
+            TextField("Search Location", text: $location.onChange { print("Solution3 \($0)") })
+        }
     }
 }
 
-///3 
-struct ContentView: View {
-    @State var location: String = ""
-
-    var body: some View {
-        TextField("Search Location", text: $location)
-            .onReceive(Just(location)) { location in
-                // print(location)
-            }
-    }
-}
-
-///4
 extension Binding {
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
         Binding(
@@ -66,8 +75,6 @@ extension Binding {
         )
     }
 }
-    
-Toggle(isOn: $isServerManage.onChange { newValue in
-                                                             }, label: {})
+
 ```
 
