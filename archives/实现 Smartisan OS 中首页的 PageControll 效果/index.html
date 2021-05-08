@@ -19,22 +19,22 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/5f38c66cc7db70204a7c4143df08c83c.json"
+            api: "https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/f96375cfef88d609466656606008bb26.json"
         }
     </script>
     
 <title>实现 Smartisan OS 中首页的 PageControll 效果 - 「Coder」灰桑</title>
 <meta name="author" content="灰桑" />
-<meta name="description" content="在看 kittenyang:在iOS中实现Smartisan OS中首页的PageControll效果 和 视错觉：从一个看似简单的自定义控件说起 这两篇文章感觉可以更好的实现实现 Smartisan OS 中首页的 PageControl 效果。" />
+<meta name="description" content="" />
 <meta property="og:title" content="实现 Smartisan OS 中首页的 PageControll 效果 - 「Coder」灰桑" />
-<meta property="og:description" content="在看 kittenyang:在iOS中实现Smartisan OS中首页的PageControll效果 和 视错觉：从一个看似简单的自定义控件说起 这两篇文章感觉可以更好的实现实现 Smartisan OS 中首页的 PageControl 效果。" />
+<meta property="og:description" content="" />
 <meta property="og:site_name" content="「Coder」灰桑" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/archives/实现 Smartisan OS 中首页的 PageControll 效果/" />
+<meta property="og:url" content="/archives/%E5%AE%9E%E7%8E%B0%20Smartisan%20OS%20%E4%B8%AD%E9%A6%96%E9%A1%B5%E7%9A%84%20PageControll%20%E6%95%88%E6%9E%9C/" />
 <meta property="og:image" content="" />
 <meta property="article:published_time" content="2016-01-02T00:00:00-00.00" />
 <meta name="twitter:title" content="实现 Smartisan OS 中首页的 PageControll 效果 - 「Coder」灰桑" />
-<meta name="twitter:description" content="在看 kittenyang:在iOS中实现Smartisan OS中首页的PageControll效果 和 视错觉：从一个看似简单的自定义控件说起 这两篇文章感觉可以更好的实现实现 Smartisan OS 中首页的 PageControl 效果。" />
+<meta name="twitter:description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:image" content="" />
 
@@ -89,41 +89,19 @@
                 
                 
                 <span class="leancloud_visitors" 
-                    id="/archives/实现 Smartisan OS 中首页的 PageControll 效果/" 
+                    id="/archives/%E5%AE%9E%E7%8E%B0%20Smartisan%20OS%20%E4%B8%AD%E9%A6%96%E9%A1%B5%E7%9A%84%20PageControll%20%E6%95%88%E6%9E%9C/" 
                     data-flag-title="实现 Smartisan OS 中首页的 PageControll 效果"> · <i class="leancloud-visitors-count"></i> Views</span>
                 
             </span>
             <div class="ga-content_body">
-                <blockquote><p>在看 <a href="http://kittenyang.com/pagecontrol/"><code>kittenyang:在iOS中实现Smartisan OS中首页的PageControll效果</code></a> 和 <a href="http://www.cnblogs.com/ludashi/p/4994520.html"><code>视错觉：从一个看似简单的自定义控件说起</code></a> 这两篇文章感觉可以更好的实现实现 Smartisan OS 中首页的 PageControl 效果。</p>
-</blockquote>
-<p>锤子的效果：</p>
-<p><figure style="flex: 75.38461538461539" ><img width="294" height="195" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/4cb12df20f3aa413ff375ff8640f7a9f.gif" /></figure></p>
-<p>首先 kittenyang 实现的，当亮点划过两个暗点的中间是还是显示的</p>
-<p><figure style="flex: 80.05319148936171" ><img width="301" height="188" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/7c62c3c797cc897b929bd28edad5d2f9.gif" /></figure></p>
-<p>再看视错觉文章里的效果：</p>
-<p><figure style="flex: 28.181818181818183" ><img width="279" height="495" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/e239797e62ada73cf93b3aa124fb9614.gif" /></figure></p>
-<p>最终实现的效果：</p>
-<p><figure style="flex: 26.956521739130434" ><img width="372" height="690" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/6441c406e870d24f369ac1a0640b6249.gif" /></figure></p>
-<h5>实现原理</h5>
-<p>首先从效果看锤子的亮点，像是从孔的下方移动。所以给人感觉是上面挖了一排孔，亮点在地道移动所以两个空中间的地方看不到移动的亮点。所以不能直接使用一个 view 移动来解决。</p>
-<p>恰巧看到另一篇文章，想到也许可以试试。</p>
-<p><strong>原理就是：使用 mask 隐藏和利用相对移动产生时差。</strong></p>
-<p>实现步骤：</p>
-<ol>
-<li><p>在自定义的 <code>LHPageControlview</code> 上创建几个未选中状态颜色的圆 darkCircle。</p>
-</li>
-<li><p>在自定义的 <code>LHPageControlview</code> 上创建一个圆大小的但透明的<code>_hightLightView</code>，它的作用就是利用 <code>mask</code> 属性将它子视图中超出 <code>_hightLightView</code> 显示区域的其他高亮的几个圆藏起来。</p>
-</li>
+                <blockquote>
+<p>在看 <a href="http://kittenyang.com/pagecontrol/"><code>kittenyang:在iOS中实现Smartisan OS中首页的PageControll效果</code></a> 和 <a href="http://www.cnblogs.com/ludashi/p/4994520.html"><code>视错觉：从一个看似简单的自定义控件说起</code></a> 这两篇文章感觉可以更好的实现实现 Smartisan OS 中首页的 PageControl 效果。</p></blockquote>
+<p>锤子的效果：</p><figure style="flex: 75.38461538461539" ><img width="294" height="195" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/4cb12df20f3aa413ff375ff8640f7a9f.gif" /></figure><p>首先 kittenyang 实现的，当亮点划过两个暗点的中间是还是显示的</p><figure style="flex: 80.05319148936171" ><img width="301" height="188" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/7c62c3c797cc897b929bd28edad5d2f9.gif" /></figure><p>再看视错觉文章里的效果：</p><figure style="flex: 28.181818181818183" ><img width="279" height="495" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/e239797e62ada73cf93b3aa124fb9614.gif" /></figure><p>最终实现的效果：</p><figure style="flex: 26.956521739130434" ><img width="372" height="690" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/6441c406e870d24f369ac1a0640b6249.gif" /></figure><h5>实现原理</h5>
+<p>首先从效果看锤子的亮点，像是从孔的下方移动。所以给人感觉是上面挖了一排孔，亮点在地道移动所以两个空中间的地方看不到移动的亮点。所以不能直接使用一个 view 移动来解决。</p><p>恰巧看到另一篇文章，想到也许可以试试。</p><p><strong>原理就是：使用 mask 隐藏和利用相对移动产生时差。</strong></p><p>实现步骤：</p><ol>
+<li><p>在自定义的 <code>LHPageControlview</code> 上创建几个未选中状态颜色的圆 darkCircle。</p></li>
+<li><p>在自定义的 <code>LHPageControlview</code> 上创建一个圆大小的但透明的<code>_hightLightView</code>，它的作用就是利用 <code>mask</code> 属性将它子视图中超出 <code>_hightLightView</code> 显示区域的其他高亮的几个圆藏起来。</p></li>
 </ol>
-<p>3.<code>_hightLightView</code> 上添加 <code>_topHidenHightLightCircles</code> 视图，然后在 <code>_topHidenHightLightCircles</code> 上面添加相应数量的选中状态的圆<code>lightCircle</code>，注意他们的位置相对于 <code>LHPageControlview</code> 上的 <code>darkCircle</code>要一一对应。</p>
-<p>整个控件结构如下图：</p>
-<p><figure style="flex: 55.348837209302324" ><img width="952" height="860" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/038b67a55ab229d521c1a9d16aaada81.png" /></figure></p>
-<p><strong>移动的时候，移动 <code>_hightLightView</code> 的同时 <code>_topHidenHightLightCircles</code> 往相反方向移动同样距离，这样在视觉上就好像 <code>_topHidenHightLightCircles</code> 是静止的，看上去只是 <code>_hightLightView</code> 在移动。</strong></p>
-<p><strong>这样当 <code>_hightLightView</code> 移动到选中状态的圆 <code>lightCircle</code> 时，相应的未选中状态的 <code>darkCircle</code> 上就像有高亮的圆 <code>lightCircle</code> 移动过来遮住并显示。</strong></p>
-<p>移动时如图：</p>
-<p><figure style="flex: 58.99470899470899" ><img width="446" height="378" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/b292297161f63b1badaae340db59995b.png" /></figure></p>
-<p>移动的关键代码：</p>
-
+<p>3.<code>_hightLightView</code> 上添加 <code>_topHidenHightLightCircles</code> 视图，然后在 <code>_topHidenHightLightCircles</code> 上面添加相应数量的选中状态的圆<code>lightCircle</code>，注意他们的位置相对于 <code>LHPageControlview</code> 上的 <code>darkCircle</code>要一一对应。</p><p>整个控件结构如下图：</p><figure style="flex: 55.348837209302324" ><img width="952" height="860" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/038b67a55ab229d521c1a9d16aaada81.png" /></figure><p><strong>移动的时候，移动 <code>_hightLightView</code> 的同时 <code>_topHidenHightLightCircles</code> 往相反方向移动同样距离，这样在视觉上就好像 <code>_topHidenHightLightCircles</code> 是静止的，看上去只是 <code>_hightLightView</code> 在移动。</strong></p><p><strong>这样当 <code>_hightLightView</code> 移动到选中状态的圆 <code>lightCircle</code> 时，相应的未选中状态的 <code>darkCircle</code> 上就像有高亮的圆 <code>lightCircle</code> 移动过来遮住并显示。</strong></p><p>移动时如图：</p><figure style="flex: 58.99470899470899" ><img width="446" height="378" src="https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/archives/assets/b292297161f63b1badaae340db59995b.png" /></figure><p>移动的关键代码：</p>
 <pre><code>CGFloat scale = distance - (int)distance;
 if (scale == 0 &amp;&amp; distance&gt;=1) {
     scale = 1;
@@ -160,13 +138,12 @@ transform = CGAffineTransformIdentity;
 
 transform = CGAffineTransformTranslate(transform, -moveDistance, 0);
 
-_topHidenHightLightCircles.layer.affineTransform = transform;</code></pre>
-<p>这样就实现了基本效果。</p>
-<p>~我在中间为了实现缩小效果，使用实时改变 _hightLightView layer 的 cornerRadius 大小。如果慢慢拖动会发现中间是有些问题的。(希望指教有什么好的方法 =。= 谢过)~</p>
-<p>解决<br>
-还是得自己解决。=。=。最近看到 <code>CGAffineTransform</code> 这个类，可以直接根据自己的中心点来进行缩放和移动。省去了再去计算在父 view 的坐标去移动。</p>
-<p>Github 代码：<a href="https://github.com/LinBling/LHPageControlTry"><code>传送门</code></a></p>
+_topHidenHightLightCircles.layer.affineTransform = transform;
 
+
+</code></pre>
+<p>这样就实现了基本效果。</p><p>~我在中间为了实现缩小效果，使用实时改变 _hightLightView layer 的 cornerRadius 大小。如果慢慢拖动会发现中间是有些问题的。(希望指教有什么好的方法 =。= 谢过)~</p><p>解决<br />
+还是得自己解决。=。=。最近看到 <code>CGAffineTransform</code> 这个类，可以直接根据自己的中心点来进行缩放和移动。省去了再去计算在父 view 的坐标去移动。</p><p>Github 代码：<a href="https://github.com/LinBling/LHPageControlTry"><code>传送门</code></a></p>
             </div>
         </article>
         <div id="ga-tags">
@@ -186,8 +163,8 @@ _topHidenHightLightCircles.layer.affineTransform = transform;</code></pre>
 <section id="ga-content_pager">
 
     <div class="next">
-        <a class="ga-highlight" href="/archives/iOS 自定义控件适应内容大小问题/">iOS 自定义控件适应内容大小问题</a>
-        <p class="yue">Why: 之前学习封装了下类似标签页的控件但是并不能根据内容大小来变化高度，看了别人的代码学习下自定义控件如何自适应内容大小。做个笔记。</p>
+        <a class="ga-highlight" href="/archives/iOS%20%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E9%80%82%E5%BA%94%E5%86%85%E5%AE%B9%E5%A4%A7%E5%B0%8F%E9%97%AE%E9%A2%98/">iOS 自定义控件适应内容大小问题</a>
+        <p class="yue"></p>
     </div>
 
 
@@ -218,7 +195,7 @@ _topHidenHightLightCircles.layer.affineTransform = transform;</code></pre>
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2020 linsyorozuya</span>
+                            <span>Copyright © 2021 linsyorozuya</span>
                             <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">

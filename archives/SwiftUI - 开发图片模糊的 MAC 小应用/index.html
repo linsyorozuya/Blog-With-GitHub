@@ -19,22 +19,22 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/5f38c66cc7db70204a7c4143df08c83c.json"
+            api: "https://cdn.jsdelivr.net/gh/linsyorozuya/i-code-log@gh-pages/f96375cfef88d609466656606008bb26.json"
         }
     </script>
     
 <title>SwiftUI - 开发图片模糊的 MAC 小应用 - 「Coder」灰桑</title>
 <meta name="author" content="灰桑" />
-<meta name="description" content="看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。" />
+<meta name="description" content="" />
 <meta property="og:title" content="SwiftUI - 开发图片模糊的 MAC 小应用 - 「Coder」灰桑" />
-<meta property="og:description" content="看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。" />
+<meta property="og:description" content="" />
 <meta property="og:site_name" content="「Coder」灰桑" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/archives/SwiftUI - 开发图片模糊的 MAC 小应用/" />
+<meta property="og:url" content="/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/" />
 <meta property="og:image" content="" />
 <meta property="article:published_time" content="2020-05-23T00:00:00-00.00" />
 <meta name="twitter:title" content="SwiftUI - 开发图片模糊的 MAC 小应用 - 「Coder」灰桑" />
-<meta name="twitter:description" content="看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。" />
+<meta name="twitter:description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:image" content="" />
 
@@ -89,25 +89,22 @@
                 
                 
                 <span class="leancloud_visitors" 
-                    id="/archives/SwiftUI - 开发图片模糊的 MAC 小应用/" 
+                    id="/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/" 
                     data-flag-title="SwiftUI - 开发图片模糊的 MAC 小应用"> · <i class="leancloud-visitors-count"></i> Views</span>
                 
             </span>
             <div class="ga-content_body">
-                <blockquote><p>看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。</p>
-</blockquote>
+                <blockquote>
+<p>看完喵神的 《 SwiftUI 与 编程思想》，尝试使用了书中类 Redux 的架构写了给图片添加模糊和修改饱和度的 MAC 上的小应用。文章记录一些其中的要点，文章部分引用了书中的段落来记录。</p></blockquote>
 <h2>🌠成果</h2>
-<p><figure style="flex: 72.19101123595506" ><img width="2056" height="1424" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/2020-05-25%2000-30-47.2020-05-25%2000_34_42.gif" /><figcaption>演示.gif</figcaption></figure></p>
-<p>应用功能很简单：</p>
-<ol>
+<figure style="flex: 72.19101123595506" ><img width="2056" height="1424" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/2020-05-25%2000-30-47.2020-05-25%2000_34_42.gif" /><figcaption>演示.gif</figcaption></figure><p>应用功能很简单：</p><ol>
 <li>可以拖动图片到应用中</li>
 <li>调节模糊程度</li>
 <li>调节饱和度</li>
 <li>拖动图片到其他软件</li>
 </ol>
 <h2>架构</h2>
-<p><figure  size-undefined><img width="-1" height="-1" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/截屏2020-05-25%20下午2.21.32.png" /><figcaption>图</figcaption></figure></p>
-<h3>数据流动方式的特点</h3>
+<figure  size-undefined><img width="-1" height="-1" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/截屏2020-05-25%20下午2.21.32.png" /><figcaption>图</figcaption></figure><h3>数据流动方式的特点</h3>
 <ol>
 <li>将 app 当作一个状态机，状态决定用户界面。</li>
 <li>这些状态都保存在一个 Store 对象中。</li>
@@ -117,13 +114,11 @@
 <li>用新的 State 替换 Store 中原有的状态，并用新状态来驱动更新界面。</li>
 <li>使用 Binding 来完成界面和状态的双向绑定。</li>
 </ol>
-<p>使用这种架构的优势将 View 中的状态操作完全解耦到了 Store 上去操作，所以对 State 的状态修改得以集中到了一个地方去处理。对项目的阅读和维护都有很好的帮助。避免了项目复杂之后散落各处的状态修改。</p>
-<h3>相关解释</h3>
+<p>使用这种架构的优势将 View 中的状态操作完全解耦到了 Store 上去操作，所以对 State 的状态修改得以集中到了一个地方去处理。对项目的阅读和维护都有很好的帮助。避免了项目复杂之后散落各处的状态修改。</p><h3>相关解释</h3>
 <h4><figure  size-undefined><img width="-1" height="-1" src="https://cdn.jsdelivr.net/gh/linsyorozuya/Pics@master/uPic/截屏2020-05-25%20下午2.09.29.png" /><figcaption>文件结构</figcaption></figure></h4>
-<p><strong>Store</strong>: 主要持有了 State 属性和一个接受和处理 Action 的 Reduce 函数。</p>
-<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Store</span><span class="p">:</span> <span class="n">ObservableObject</span> <span class="p">{</span>
+<p><strong>Store</strong>: 主要持有了 State 属性和一个接受和处理 Action 的 Reduce 函数。</p><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Store</span><span class="p">:</span> <span class="n">ObservableObject</span> <span class="p">{</span>
 
-        <span class="p">@</span><span class="n">Published</span> <span class="kd">var</span> <span class="nv">appState</span> <span class="p">=</span> <span class="n">AppState</span><span class="p">()</span>
+    	<span class="p">@</span><span class="n">Published</span> <span class="kd">var</span> <span class="nv">appState</span> <span class="p">=</span> <span class="n">AppState</span><span class="p">()</span>
 
     <span class="kd">static</span> <span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AppState</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">AppAction</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">AppState</span><span class="p">,</span> <span class="n">AppCommand</span><span class="p">?)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nv">appState</span> <span class="p">=</span> <span class="n">state</span>
@@ -155,15 +150,12 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><strong>State</strong>: 存放相关状态的位置。</p>
-<p><strong>Action</strong>：一个定义相关操作的枚举</p>
-<div class="highlight"><pre><span></span><span class="kd">enum</span> <span class="nc">AppAction</span> <span class="p">{</span>
+<p><strong>State</strong>: 存放相关状态的位置。</p><p><strong>Action</strong>：一个定义相关操作的枚举</p><div class="highlight"><pre><span></span><span class="kd">enum</span> <span class="nc">AppAction</span> <span class="p">{</span>
     <span class="k">case</span> <span class="p">.</span><span class="n">action</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span>
     <span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
-<p><strong>Command</strong>：执行相关副作用操作的地方</p>
-<div class="highlight"><pre><span></span><span class="kd">protocol</span> <span class="nc">AppCommand</span> <span class="p">{</span>
+<p><strong>Command</strong>：执行相关副作用操作的地方</p><div class="highlight"><pre><span></span><span class="kd">protocol</span> <span class="nc">AppCommand</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">execute</span><span class="p">(</span><span class="k">in</span> <span class="n">store</span><span class="p">:</span> <span class="n">Store</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -177,21 +169,14 @@
 <span class="p">}</span>
 </pre></div>
 <h2>三种改变 State 的途径</h2>
-<p>更准确的应该是两种，Command 的方式最终也是通过 Action 来处理相关状态改变。</p>
-<h3>通过 Action 来改变 State</h3>
-<p>通过向 Store 发送并处理 Action 来直接修改或间接通过 Command 来修改相关状态。</p>
-<h3>通过 Binding 双向绑定改变 State</h3>
-<p>利用 SwiftUI 的双向绑定的特性，可以直接把 State 和 View 绑定起来。当 View 的状态改变直接修改了 Store 中的原始状态。</p>
-<h3>通过 Command 副作用来改变 State</h3>
-<blockquote><p>“Reducer 的唯一职责应该是计算新的 State，而发送请求和接收响应，显然和返回新的 State 没什么关系，它们属于设置状态这一操作的“副作用”。在我们的架构中我们使用 Command 来代表“在设置状态的同时需要触发一些其他操作”这个语境。Reducer 在返回新的 State 的同时，还返回一个代表需要进行何种副作用的 Command 值 (对应上一段中的第一个时间点)。Store 在接收到这个 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。这个 Action 中带有异步操作所获取到的数据。它将再次触发 Reducer 并返回新的 State，继而完成异步操作结束时的 UI 更新 。”</p>
-</blockquote>
-<p>Store 在接收到 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。Action 再次触发 Reducer 并返回新的 State，继而完成 UI 更新 。</p>
-<h2>用绑定来更新的状态时通过 Publisher 来订阅并处理事件</h2>
-<p>对于通过 Action 改变的状态，如果我们想要执行网络请求这样的副作用，可以通过同时返回合适的 Command 完成。但是对于通过绑定来更新的状态，由于不会经过 Store 的 reducer 来处理状态并返回 Command，我们缺少一种有效的手段来在它们改变时执行副作用。</p>
-<p>在 SwiftUI 中可以使用 combine 来解决这个问题。最简单的方法是在属性前加上 @Published 来为相关属性创建 Publisher 。然后在合适的位置订阅相关事件来执行额外的操作。</p>
-<h2>总结</h2>
+<p>更准确的应该是两种，Command 的方式最终也是通过 Action 来处理相关状态改变。</p><h3>通过 Action 来改变 State</h3>
+<p>通过向 Store 发送并处理 Action 来直接修改或间接通过 Command 来修改相关状态。</p><h3>通过 Binding 双向绑定改变 State</h3>
+<p>利用 SwiftUI 的双向绑定的特性，可以直接把 State 和 View 绑定起来。当 View 的状态改变直接修改了 Store 中的原始状态。</p><h3>通过 Command 副作用来改变 State</h3>
+<blockquote>
+<p>“Reducer 的唯一职责应该是计算新的 State，而发送请求和接收响应，显然和返回新的 State 没什么关系，它们属于设置状态这一操作的“副作用”。在我们的架构中我们使用 Command 来代表“在设置状态的同时需要触发一些其他操作”这个语境。Reducer 在返回新的 State 的同时，还返回一个代表需要进行何种副作用的 Command 值 (对应上一段中的第一个时间点)。Store 在接收到这个 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。这个 Action 中带有异步操作所获取到的数据。它将再次触发 Reducer 并返回新的 State，继而完成异步操作结束时的 UI 更新 。”</p></blockquote>
+<p>Store 在接收到 Command 后，开始进行额外操作，并在操作完成后发送一个新的 Action。Action 再次触发 Reducer 并返回新的 State，继而完成 UI 更新 。</p><h2>用绑定来更新的状态时通过 Publisher 来订阅并处理事件</h2>
+<p>对于通过 Action 改变的状态，如果我们想要执行网络请求这样的副作用，可以通过同时返回合适的 Command 完成。但是对于通过绑定来更新的状态，由于不会经过 Store 的 reducer 来处理状态并返回 Command，我们缺少一种有效的手段来在它们改变时执行副作用。</p><p>在 SwiftUI 中可以使用 combine 来解决这个问题。最简单的方法是在属性前加上 @Published 来为相关属性创建 Publisher 。然后在合适的位置订阅相关事件来执行额外的操作。</p><h2>总结</h2>
 <p>通过这个架构体验到了 SwiftUI 开发数据驱动页面更新的便利和优势，而且 SwiftUI 还能用来开发 Mac 端的应用。虽然目前 SwiftUI 还在开始不成熟的阶段，但是有理由相信以后 SwiftUI 统一苹果全平台的时候。期待下个月的 WWDC 的 SwiftUI。</p>
-
             </div>
         </article>
         <div id="ga-tags">
@@ -207,14 +192,14 @@
 <section id="ga-content_pager">
 
     <div class="next">
-        <h3>没有了</h3>
-        <p class="yue">这是最新的文章</p>
+        <a class="ga-highlight" href="/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/">SwiftUI 如何监听 @State 变更</a>
+        <p class="yue">SwiftUI 如何监听 @State 变更</p>
     </div>
 
 
     <div class="prev">
-        <a class="ga-highlight" href="/archives/在 Playground 中编译 SwiftUI/">在 Playground 中编译 SwiftUI</a>
-        <p class="yue">记录下在 Playground 中编译 SwiftUI 的代码。</p>
+        <a class="ga-highlight" href="/archives/%E5%9C%A8%20Playground%20%E4%B8%AD%E7%BC%96%E8%AF%91%20SwiftUI/">在 Playground 中编译 SwiftUI</a>
+        <p class="yue"></p>
     </div>
 
 </section>
@@ -239,7 +224,7 @@
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2020 linsyorozuya</span>
+                            <span>Copyright © 2021 linsyorozuya</span>
                             <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">

@@ -23,18 +23,18 @@
         }
     </script>
     
-<title>Git 命令备忘 - 「Coder」灰桑</title>
+<title>SwiftUI 如何监听 @State 变更 - 「Coder」灰桑</title>
 <meta name="author" content="灰桑" />
-<meta name="description" content="" />
-<meta property="og:title" content="Git 命令备忘 - 「Coder」灰桑" />
-<meta property="og:description" content="" />
+<meta name="description" content="SwiftUI 如何监听 @State 变更" />
+<meta property="og:title" content="SwiftUI 如何监听 @State 变更 - 「Coder」灰桑" />
+<meta property="og:description" content="SwiftUI 如何监听 @State 变更" />
 <meta property="og:site_name" content="「Coder」灰桑" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" />
+<meta property="og:url" content="/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/" />
 <meta property="og:image" content="" />
-<meta property="article:published_time" content="2020-01-26T00:00:00-00.00" />
-<meta name="twitter:title" content="Git 命令备忘 - 「Coder」灰桑" />
-<meta name="twitter:description" content="" />
+<meta property="article:published_time" content="2021-05-08T00:00:00-00.00" />
+<meta name="twitter:title" content="SwiftUI 如何监听 @State 变更 - 「Coder」灰桑" />
+<meta name="twitter:description" content="SwiftUI 如何监听 @State 变更" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:image" content="" />
 
@@ -76,41 +76,91 @@
 <main>    
     <section class="ga-section ga-content">
         <article class="yue">
-            <h1 class="ga-post_title">Git 命令备忘</h1>
+            <h1 class="ga-post_title">SwiftUI 如何监听 @State 变更</h1>
             <span class="ga-post_meta ga-mono">
                 <span>灰桑</span>
                 <time>
-                    2020-01-26
+                    2021-05-08
                 </time>
                 
-                in <a no-style class="category" href="/category/%E5%85%B6%E4%BB%96/">
-                    其他
+                in <a no-style class="category" href="/category/iOS/">
+                    iOS
                 </a>
                 
                 
                 <span class="leancloud_visitors" 
-                    id="/archives/Git%20%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" 
-                    data-flag-title="Git 命令备忘"> · <i class="leancloud-visitors-count"></i> Views</span>
+                    id="/archives/SwiftUI%20%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%20%40State%20%E5%8F%98%E6%9B%B4/" 
+                    data-flag-title="SwiftUI 如何监听 @State 变更"> · <i class="leancloud-visitors-count"></i> Views</span>
                 
             </span>
             <div class="ga-content_body">
-                <blockquote>
-<p>笔记用于回顾。</p></blockquote>
-<h3>查看当前文件状态</h3>
-<p>要查看哪些文件处于什么状态，可以用 <code>git status</code> 命令。</p><p><code>git status</code> 命令的输出十分详细，但其用语有些繁琐。 如果你使用 git status -s 命令或 git status --short 命令，你将得到一种更为紧凑的格式输出。</p><h3>查看提交历史</h3>
-<p><code>git log</code> 会按提交时间列出所有的更新。</p><p><code>git log -p</code>用来显示每次提交的内容差异。</p><p><code>git log -p -2</code>用来显示每次提交的内容差异，-2 显示最近两次提交。</p><h3>创建新分支并切换</h3>
-<p><code>git checkout -b newBranch</code> 创建一个新的叫 <code>newBranch</code> 的分支，并切换到该分支。</p><h3>创建嵌套目录</h3>
-<p><code>mkdir -p a/b</code> 创建嵌套的文件夹 a 和 b。</p><h3>合并分支</h3>
-<p><code>git merge</code> 在这个命令下，Git 会找到两个分支的共同祖先，将这三者进行一个三方合并。这种三方合并会产生一个新的提交，当前会指向这个新的提交。</p><p><code>git rebase</code> 则不采用三方合并，它会比较要「合并的分支」和「两个分支的共同祖先」这两个提交，将其中的修改提取成一个补丁。然后在「当前分支」的提交上应用这个补丁，从而生成一个新的「提交」。这种方式被叫做「rebase」，中文叫「变基」。</p><h3>解决 Merge 冲突</h3>
-<p><code>git merge --abort</code> 可以恢复到 merge 之前的状态。</p><h3>查看到所有关联到当前仓库的远程仓库</h3>
-<p>通过 <code>git remote</code> 命令，我们可以查看到所有关联到当前仓库的远程仓库。</p><p>通过 <code>git remote show</code> 命令，我们可以查看某一个远程仓库的详细信息。</p><h3>git stash</h3>
-<p><code>git stash</code> 这个命令可以将你当前进行到一半的工作保存到一个暂存区域，然后将当前目录回滚到上一次提交。</p><p><code>git stash apply</code>把之前放到储藏区的最新的那个修改切回来。</p><p><code>git stash list</code>可以把所有放到储藏区的修改都列出来。</p><p><code>git stash --list</code> 查看<code>git stash</code>命令列表。</p>
+                <h3>SwiftUI 如何监听 @State 变更</h3>
+
+<pre><code>/// 1
+@State var searchText = PassthroughSubject&lt;String, Never&gt;()
+.onReceive(searchText.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { search in
+    getSearchMembers(search: search)
+})
+
+///2
+struct ContentView: View {
+    @State var location: String = &quot;&quot;
+
+    var body: some View {
+        let binding = Binding&lt;String&gt;(get: {
+            self.location
+        }, set: {
+            self.location = $0
+            // do whatever you want here
+        })
+
+        return VStack {
+            Text(&quot;Current location: \(location)&quot;)
+            TextField(&quot;Search Location&quot;, text: binding)
+        }
+
+    }
+}
+
+///3 
+struct ContentView: View {
+    @State var location: String = &quot;&quot;
+
+    var body: some View {
+        TextField(&quot;Search Location&quot;, text: $location)
+            .onReceive(Just(location)) { location in
+                // print(location)
+            }
+    }
+}
+
+///4
+extension Binding {
+    func onChange(_ handler: @escaping (Value) -&gt; Void) -&gt; Binding&lt;Value&gt; {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue)
+            }
+        )
+    }
+}
+
+Toggle(isOn: $isServerManage.onChange { newValue in
+                                                             }, label: {})
+</code></pre>
+
             </div>
         </article>
         <div id="ga-tags">
     
     <span class="ga-tag">
-        <a class="ga-highlight" href="/tag/Git/">#Git</a>
+        <a class="ga-highlight" href="/tag/iOS/">#iOS</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/SwiftUI/">#SwiftUI</a>
     </span>
     
 </div>
@@ -120,14 +170,14 @@
 <section id="ga-content_pager">
 
     <div class="next">
-        <a class="ga-highlight" href="/archives/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%87%E5%BF%98/">命令行备忘</a>
-        <p class="yue"></p>
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
     </div>
 
 
     <div class="prev">
-        <a class="ga-highlight" href="/archives/%E8%AE%A9%20Xcode%20%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E5%A5%BD%E7%9C%8B/">让 Xcode 的代码更好看</a>
-        <p class="yue">这几年随着不断更新 Xcode 变得更加强大和易用，当然也被越来越多的开发者吐槽它的又胖又慢。但即便大家都在吐槽，但 Xcode 仍然是大部分 iOS 开发者的首选 IDE。</p>
+        <a class="ga-highlight" href="/archives/SwiftUI%20-%20%E5%BC%80%E5%8F%91%E5%9B%BE%E7%89%87%E6%A8%A1%E7%B3%8A%E7%9A%84%20MAC%20%E5%B0%8F%E5%BA%94%E7%94%A8/">SwiftUI - 开发图片模糊的 MAC 小应用</a>
+        <p class="yue"></p>
     </div>
 
 </section>
