@@ -1,5 +1,4 @@
 ---
-​---
 layout: post
 title: SwiftUI 如何监听 @State 变更
 slug: SwiftUI 如何监听 @State 变更
@@ -12,7 +11,6 @@ tags:
   - iOS
   - SwiftUI
 excerpt: 
-​---
 ---
 
 ### SwiftUI 如何监听 @State 变更
